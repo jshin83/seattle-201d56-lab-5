@@ -80,11 +80,13 @@ Test this function by hand in the console to get it working, and when you think 
 var testArray = [2, 3, 4]; //eslint-disable-line
 
 function sumArray(sumArr) { //eslint-disable-line
-  var sum = sumArr[0];
+  let tempSum = sumArr[0];
   for (let i = 1; i < sumArr.length; i++) {
-    sum += sumArr[i];
+    var tempSumArr = sum(tempSum, sumArr[i]);
+    tempSum = tempSumArr[0];
   }
-  return [ sum, sumArr + ' was passed in as an array of numbers, and ' + sum + ' is their sum.'];
+  console.log('sum is : ' + tempSum);
+  return [ tempSum, sumArr + ' was passed in as an array of numbers, and ' + tempSum + ' is their sum.'];
 }
 
 // Here is the test for sumArray(); uncomment it to run it
@@ -105,11 +107,21 @@ Test this function by hand in the console to get it working, and when you think 
 
 // Write your code here
 function multiplyArray(multArr) { //eslint-disable-line
+  /*var testArray = [2, 3, 4]; //eslint-disable-line
 
+  function sumArray(sumArr) { //eslint-disable-line
+    let tempSum = sumArr[0];
+    for (let i = 1; i < sumArr.length; i++) {
+      var tempSumArr = sum(tempSum, sumArr[i]);
+      tempSum = tempSumArr[0];
+    }
+    console.log('sum is : ' + tempSum);
+    return [ tempSum, sumArr + ' was passed in as an array of numbers, and ' + tempSum + ' is their sum.'];
+  }*/
 }
 
 // Here is the test for multiplyArray(); uncomment it to run it
-// testMultiplyArray(testArray);
+//testMultiplyArray(testArray);
 
 // Once you get the test passing, do an a-c-p cycle and synchronize the code between GitHub and your laptop. 
 
