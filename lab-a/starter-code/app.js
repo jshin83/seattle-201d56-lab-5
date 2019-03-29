@@ -56,9 +56,20 @@ Test this function by hand in the console to get it working, and when you think 
 
 // Write your code here
 function sumAndMultiply(a, b, c) { //eslint-disable-line
-  var sum = a + b + c;
-  var product = a * b * c;
-  return [ sum, product, a + ' and ' + b + ' and ' + c + ' sum to ' + sum + '.', 'The product of ' + a + ' and ' + b + ' and ' + c + ' is ' + product + '.'];
+  //console.log(a + ', ' + b + ', ' + c);
+  var add1 = sum(a, b);
+  //console.log(add1);
+  var add2 = sum(add1[0], c);
+  //console.log(add2);
+  var add = add2[0];
+  //console.log('add is ' + add);
+  var product1 = multiply(a, b);
+  var product2 = multiply(product1[0], c);
+  var product = product2[0];
+  //console.log('product is ' + product);
+
+  return [ add, product, a + ' and ' + b + ' and ' + c + ' sum to ' + add + '.', 'The product of ' + a + ' and ' + b + ' and ' + c + ' is ' + product + '.'];
+  //console.log(result);
 }
 
 // Here is the test for sumAndMultiply(); uncomment it to run it
@@ -80,11 +91,13 @@ Test this function by hand in the console to get it working, and when you think 
 var testArray = [2, 3, 4]; //eslint-disable-line
 
 function sumArray(sumArr) { //eslint-disable-line
-  var sum = sumArr[0];
+  let tempSum = sumArr[0];
   for (let i = 1; i < sumArr.length; i++) {
-    sum += sumArr[i];
+    var tempSumArr = sum(tempSum, sumArr[i]);
+    tempSum = tempSumArr[0];
   }
-  return [ sum, sumArr + ' was passed in as an array of numbers, and ' + sum + ' is their sum.'];
+  console.log('sum is : ' + tempSum);
+  return [ tempSum, sumArr + ' was passed in as an array of numbers, and ' + tempSum + ' is their sum.'];
 }
 
 // Here is the test for sumArray(); uncomment it to run it
@@ -105,11 +118,16 @@ Test this function by hand in the console to get it working, and when you think 
 
 // Write your code here
 function multiplyArray(multArr) { //eslint-disable-line
-  let product = multArr[0];
+  console.log('prod array holds ' + multArr);
+  let tempProduct = multArr[0];
   for (let i = 1; i < multArr.length; i++) {
-    product *= multArr[i];
+    var tempProdArr = multiply(tempProduct, multArr[i]);
+    tempProduct = tempProdArr[0];
   }
-  return [ product, 'The numbers ' + multArr + ' have a product of ' + product + '.'];
+  console.log('product is : ' + tempProduct);
+  var display = [ tempProduct, 'The numbers ' + multArr + ' have a product of ' + tempProduct + '.'];
+  console.log(display);
+  return display;
 }
 
 // Here is the test for multiplyArray(); uncomment it to run it
