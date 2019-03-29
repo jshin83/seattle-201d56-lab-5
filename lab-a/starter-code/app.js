@@ -118,17 +118,16 @@ Test this function by hand in the console to get it working, and when you think 
 
 // Write your code here
 function multiplyArray(multArr) { //eslint-disable-line
-  /*var testArray = [2, 3, 4]; //eslint-disable-line
-
-  function sumArray(sumArr) { //eslint-disable-line
-    let tempSum = sumArr[0];
-    for (let i = 1; i < sumArr.length; i++) {
-      var tempSumArr = sum(tempSum, sumArr[i]);
-      tempSum = tempSumArr[0];
-    }
-    console.log('sum is : ' + tempSum);
-    return [ tempSum, sumArr + ' was passed in as an array of numbers, and ' + tempSum + ' is their sum.'];
-  }*/
+  console.log('prod array holds ' + multArr);
+  let tempProduct = multArr[0];
+  for (let i = 1; i < multArr.length; i++) {
+    var tempProdArr = multiply(tempProduct, multArr[i]);
+    tempProduct = tempProdArr[0];
+  }
+  console.log('product is : ' + tempProduct);
+  var display = [ tempProduct, 'The numbers ' + multArr + ' have a product of ' + tempProduct + '.'];
+  console.log(display);
+  return display;
 }
 
 // Here is the test for multiplyArray(); uncomment it to run it
