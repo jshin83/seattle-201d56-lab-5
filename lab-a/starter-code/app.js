@@ -118,17 +118,6 @@ Test this function by hand in the console to get it working, and when you think 
 
 // Write your code here
 function multiplyArray(multArr) { //eslint-disable-line
-<<<<<<< HEAD
-  let product = multArr[0];
-  for (let i = 1; i < multArr.length; i++) {
-    product *= multArr[i];
-  }
-  return [ product, 'The numbers ' + multArr + ' have a product of ' + product + '.'];
-}
-
-// Here is the test for multiplyArray(); uncomment it to run it
-testMultiplyArray(testArray);
-=======
   /*var testArray = [2, 3, 4]; //eslint-disable-line
 
   function sumArray(sumArr) { //eslint-disable-line
@@ -144,7 +133,6 @@ testMultiplyArray(testArray);
 
 // Here is the test for multiplyArray(); uncomment it to run it
 //testMultiplyArray(testArray);
->>>>>>> problem-4
 
 // Once you get the test passing, do an a-c-p cycle and synchronize the code between GitHub and your laptop. 
 
